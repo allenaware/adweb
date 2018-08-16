@@ -80,6 +80,13 @@ exports.view = {
   },
   handlebars: {
     handle: handlebars,
+	    options: {
+	compat: true,
+	strict: false,
+	preventIndent: true,
+	ignoreStandalone: true,
+	cache: false
+    },
     beforeRender: (handlebars, handleOptions) => {
       // todo
     }
