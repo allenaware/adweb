@@ -1,0 +1,32 @@
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.container {
+    position: relative;
+    width:600px;
+    margin: auto;
+}
+.header{
+    position: relative;
+    background-color: cornflowerblue;
+    height: 100px;
+    padding: 1px;
+}
+@media screen and (min-width: 600px) {
+    nav {
+        float: left;
+        width: 25%;
+        background-color: aliceblue;
+    }
+    section {
+        margin-left: 25%;
+        padding: 5px;
+    }
+}
+@media screen and (max-width: 599px) {
+    nav li {
+        display: inline;
+    }
+}
