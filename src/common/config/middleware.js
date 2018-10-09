@@ -3,10 +3,17 @@ const isDev = think.env === 'development';
 
 module.exports = [
   {
+    handle:'header',
+    options:{},
+
+  },
+
+  {
     handle: 'meta',
     options: {
       logRequest: isDev,
-      sendResponseTime: isDev
+      sendResponseTime: isDev,
+      sendPowerBy:false
     }
   },
   {
@@ -36,5 +43,5 @@ module.exports = [
     options: {}
   },
   'logic',
-  'controller'
+  'controller',
 ];
