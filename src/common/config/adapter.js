@@ -1,6 +1,6 @@
 const fileCache = require('think-cache-file');
-//const nunjucks = require('think-view-nunjucks');
-const handlebars = require('think-view-handlebars');
+const nunjucks = require('think-view-nunjucks');
+// const handlebars = require('think-view-handlebars');
 const fileSession = require('think-session-file');
 const mysql = require('think-model-mysql');
 const {Console, File, DateFile} = require('think-logger3');
@@ -72,23 +72,17 @@ exports.session = {
  * @type {Object}
  */
 exports.view = {
-    type: 'handlebars',
+    type: 'nunjucks',
     common: {
         viewPath: path.join(think.ROOT_PATH, 'view'),
         sep: '_',
-        extname: '.hbs'
+        extname: '.njk'
     },
-    handlebars: {
-        handle: handlebars,
-        options: {
-            compat: true,
-            strict: false,
-            preventIndent: true,
-            ignoreStandalone: true,
-            cache: false
-        },
-        beforeRender: (handlebars, handleOptions) => {
-            // todo
+    nunjucks: {
+        handle: nunjucks,
+        beforeRender: () => {}, // 模板渲染预处理
+        options: { // 模板引擎额外的配置参数
+    
         }
     }
 };

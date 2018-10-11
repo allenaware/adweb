@@ -3,6 +3,11 @@ const isDev = think.env === 'development';
 
 module.exports = [
   {
+    handle:'error',
+    options:{},
+
+  },
+  {
     handle:'header',
     options:{},
 
